@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThinkMate AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--color-primary)',
+              secondary: 'var(--color-secondary)',
+              bg: 'var(--color-bg)',
+              panel: 'var(--color-panel)',
+              txt: 'var(--color-text)',
+              accent: 'var(--color-accent)',
+            },
+            fontFamily: {
+              main: ['var(--font-main)', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: 'var(--radius)',
+              'xl': 'calc(var(--radius) + 4px)',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Orbitron:wght@400;700&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        /* Defaults to be overridden by JS */
+        --color-primary: #6366f1;
+        --color-secondary: #ec4899;
+        --color-bg: #f3f4f6;
+        --color-panel: #ffffff;
+        --color-text: #1f2937;
+        --color-accent: #8b5cf6;
+        
+        --font-main: 'Outfit', sans-serif;
+        --radius: 1rem;
+        --text-base: 16px;
+        
+        --panel-bg-opacity: 0.7;
+        --panel-border: 1px solid rgba(255,255,255,0.2);
+        --panel-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        --backdrop-blur: 12px;
+      }
+
+      body {
+        font-family: var(--font-main);
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-size: var(--text-base);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Custom Panel Class that uses Theme Variables */
+      .theme-panel {
+        background-color: color-mix(in srgb, var(--color-panel), transparent calc(100% - (var(--panel-bg-opacity) * 100%)));
+        border: var(--panel-border);
+        box-shadow: var(--panel-shadow);
+        backdrop-filter: blur(var(--backdrop-blur));
+        border-radius: var(--radius);
+        transition: all 0.3s ease;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 99px; opacity: 0.5; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

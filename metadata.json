@@ -1,0 +1,7 @@
+{
+  "name": "ThinkMate AI",
+  "description": "A highly customizable, colorful, and intelligent AI learning assistant for students. Features chat, quizzes, study plans, and full visual customization.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
